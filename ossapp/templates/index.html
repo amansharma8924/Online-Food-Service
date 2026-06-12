@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <title>Foodies.com</title>
+  </head>
+    <body>
+
+        <div class="container-fluid">
+        <!-- outer start -->
+
+            {% include "navbar.html" %}
+
+            <!-- slider start -->
+            <div class="row">
+                <div class="col-sm-12 p-0">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="static/images/Banner/slider1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="static/images/banner/slider2.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="static/images/banner/slider3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+
+                            </div>
+                          </div>
+                             <div class="carousel-item">
+                            <img src="static/images/banner/slider4.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+            <!-- slider end -->
+
+
+
+            <!-- section start -->
+            <div class="row mt-3">
+                <div class="col-sm-3 text-center">
+                    <div class="section shadow-sm">
+                        <img src="static/images/section/img1.jpg" alt="">
+                    </div>
+                    <button type="button" class="btn btn-info mt-2">Masala Paneer</button>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="section shadow-sm">
+                        <img src="static/images/section/img2.jpg" alt="">
+                    </div>
+                    <button type="button" class="btn btn-info mt-2">Chicken Biryani</button>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="section shadow-sm">
+                        <img src="static/images/section/img3.webp" alt="">
+                    </div>
+                    <button type="button" class="btn btn-info mt-2">Burger</button>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="section shadow-lg">
+                        <img src="static/images/section/img4.jpg" alt="">
+                    </div>
+                    <button type="button" class="btn btn-info mt-2">Pizza</button>
+                </div>
+            </div>
+            <!-- section end -->
+
+
+
+            <!-- product start -->
+            <div class="row mt-5">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.99 /-</h5>
+                            <p class="fw-bold">Vej Manchurian</p>
+                            <small class="card-text d-block">Mix Veg Manchurian - Indo Chinese Cuisine.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.149 /-</h5>
+                            <p class="fw-bold">Egg Dum Biryani</p>
+                            <small class="card-text d-block">Egg biryani using basmati rice and spices 500gm.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.299 /-</h5>
+                            <p class="fw-bold">Mutton Korma</p>
+                            <small class="card-text d-block">Mutton Korma with spices 250gm.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.299 /-</h5>
+                            <p class="fw-bold">Chicken Curry</p>
+                            <small class="card-text d-block">Chicken,spices 450gm.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.199 /-</h5>
+                            <p class="fw-bold">Cookies</p>
+                            <small class="card-text d-block">Eggless Oats & Chocolate Chip Cookies.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.1000 /-</h5>
+                            <p class="fw-bold">Chocolate Cake</p>
+                            <small class="card-text d-block">Black Exocita Chocolate black forest.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro7.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.99 /-</h5>
+                            <p class="fw-bold">Mango Juice</p>
+                            <small class="card-text d-block">Famous mango juice.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="static/images/product/pro8.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Rs.99 /-</h5>
+                            <p class="fw-bold">Dosa</p>
+                            <small class="card-text d-block">Golden delight yummiest dosas.</small>
+                            <div class="mt-2">
+                                <a href="#" class="btn btn-danger">Add to cart</a>
+                                <a href="#" class="btn btn-danger float-end">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- product end -->
+          {% include "footer.html" %}
+        <!-- outer end -->
+        </div>
+
+    </body>
+</html>

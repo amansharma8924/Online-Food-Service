@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Customers</h2>
+<form method="get" action="{% url 'customer_search' %}" class="d-flex mb-3">
+  <input type="text" name="q" value="{{ query }}" placeholder="Search customers..." class="form-control me-2">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<ul class="list-group">
+  {% for c in customers %}
+    <li class="list-group-item">{{ c.name }} - {{ c.emailaddress }} - {{ c.contactno }}</li>
+  {% empty %}
+    <li class="list-group-item">No customers found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

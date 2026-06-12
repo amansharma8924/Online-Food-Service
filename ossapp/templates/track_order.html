@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Track Order #{{ order_id }}</h2>
+<div id="status">Loading...</div>
+<div id="map" style="height:400px;margin-top:10px;">Map will appear here (if Leaflet CDN available).</div>
+
+<script>
+async function fetchStatus(){
+  const res = await fetch("{% url 'order_status_api' order_id %}");
+  const j = await res.json();
+  if(j.ok){
+    const o = j.order;
+    document.getElementById('status').innerText = "Status: " + o.status + (o.driver_lat ? " | Driver at: "+o.driver_lat+","+o.driver_lng : "");
+    // update map marker (basic)
+    if(window.L && o.driver_lat && o.driver_lng){
+      const lat = parseFloat(o.driver_lat), lng = parseFloat(o.driver_lng);
+      if(!window._marker){
+        window._map = L.map('map').setView([lat, lng], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19}).addTo(window._map);
+        window._marker = L.marker([lat, lng]).addTo(window._map);
+      } else {
+        window._marker.setLatLng([lat, lng]);
+        window._map.setView([lat, lng]);
+      }
+    }
+  } else {
+    document.getElementById('status').innerText = "Error fetching status";
+  }
+}
+fetchStatus();
+setInterval(fetchStatus, 5000);
+</script>
+<!-- Leaflet CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endblock %}

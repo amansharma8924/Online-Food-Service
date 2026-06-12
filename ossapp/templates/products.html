@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Products</h2>
+<form method="get" action="{% url 'product_list' %}" class="d-flex mb-3">
+  <input type="text" name="q" value="{{ query }}" placeholder="Search products..." class="form-control me-2">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<div class="row">
+  {% for product in products %}
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description|truncatewords:15 }}</p>
+          <p><strong>₹{{ product.price }}</strong></p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No products found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

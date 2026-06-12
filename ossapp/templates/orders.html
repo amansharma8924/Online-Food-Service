@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Orders</h2>
+<form method="get" action="{% url 'order_search' %}" class="d-flex mb-3">
+  <input type="text" name="q" value="{{ query }}" placeholder="Search orders..." class="form-control me-2">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<ul class="list-group">
+  {% for order in orders %}
+    <li class="list-group-item">
+      Order #{{ order.id }} - {{ order.status }} - Customer: {{ order.customer.name if order.customer else 'N/A' }}
+      <a href="{% url 'track_order_page' order.id %}" class="btn btn-sm btn-outline-primary float-end">Track</a>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No orders found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
